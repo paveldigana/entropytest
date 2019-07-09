@@ -13,8 +13,8 @@ ADD target/entropytest-0.0.1-SNAPSHOT.jar app.jar
 # content (e.g. "index.html") would require the file to have a modification time.
 RUN sh -c 'touch /app.jar'
 
-# Make port 9090 available to the world outside this container
-EXPOSE 9090
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
 # The project JAR file is ADDed to the container as "app.jar" and then executed in the ENTRYPOINT
 ENTRYPOINT [ "sh", "-c", "java -jar /app.jar" ]
