@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   oracledb:
-    image: oracleinanutshell/oracle-xe-11g
+    image: paveldigana/entropytestdb
     ports:
       - 1521:1521
     environment:
@@ -10,7 +10,7 @@ services:
       - entropytest-network
     restart: always
   entropytestapp:
-    image: paveldigana/entropytest
+    image: paveldigana/entropytestapp
     ports:
       - 9090:9090
     networks:
