@@ -1,0 +1,44 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- format for CSV data -->
+    <property name="csv.separator" value=";"/>
+    <property name="csv.encoding" value="UTF-8"/>
+
+    <changeSet id="2019-07-09_pdi_000" author="pdigana">
+        <tagDatabase tag="empty"/>
+    </changeSet>
+
+    <changeSet id="2019-07-09_pdi_001" author="pdigana">
+        <createTable tableName="cat">
+            <column name="ID" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(100 CHAR)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2019-07-09_pdi_002" author="pdigana">
+        <insert tableName="CAT">
+            <column name="ID" value="1"/>
+            <column name="NAME" value="Mourek"/>
+        </insert>
+        <insert tableName="CAT">
+            <column name="ID" value="2"/>
+            <column name="NAME" value="Zrzek"/>
+        </insert>
+        <insert tableName="CAT">
+            <column name="ID" value="3"/>
+            <column name="NAME" value="Ousko"/>
+        </insert>
+        <insert tableName="CAT">
+            <column name="ID" value="4"/>
+            <column name="NAME" value="Packa"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
