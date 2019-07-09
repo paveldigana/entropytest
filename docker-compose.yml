@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  oracledb:
+    image: oracleinanutshell/oracle-xe-11g
+    ports:
+      - 1521:1521
+    environment:
+      ORACLE_ALLOW_REMOTE: 'true'
+    networks:
+      - entropytest-network
+    restart: always
+  entropytestapp:
+    image: paveldigana/entropytest
+    ports:
+      - 9090:9090
+    networks:
+      - entropytest-network
+    restart: always
+networks:
+  entropytest-network:
